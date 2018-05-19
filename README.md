@@ -1,4 +1,5 @@
-# Your [DocPad](http://docpad.org) Project
+## Run
+docpad run --skeleton casper
 
 ## License
 Copyright &copy; 2018+ All rights reserved.
