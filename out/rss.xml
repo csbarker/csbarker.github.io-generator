@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Callum Barker]]></title>
+        <description><![CDATA[A blog all about how awesome I am]]></description>
+        <link>http://127.0.0.1:9778</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 19 May 2018 21:17:09 GMT</lastBuildDate>
+        <atom:link href="http://127.0.0.1:9778/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Sat, 19 May 2018 21:15:59 GMT</pubDate>
+        <item>
+            <title><![CDATA[Create a blog on Github Pages]]></title>
+            <description><![CDATA[<p>One of the cool features of Github is the ability to host static files (html, css, js, images) using <a href="https://pages.github.com/">Github Pages</a>. I have previously used this functionality to host my mini productivity tool <a href="https://csbarker.github.io/balance/">Balance</a> but I&#39;m eager to use it a more substantial way. </p>
+<p>So lets make a blog!</p>
+<h3 id="step-1-setup-and-validate-your-work-directory">Step 1: Setup and validate your work directory</h3>
+<p>Gotta start somewhere...</p>
+<pre><code>mkdir my-blog-generator
+cd my-blog-generator
+
+npm -v # confirm we have node
+git --version # confirm we have git
+</code></pre><h3 id="step-2-install-your-blog-generator">Step 2: Install your blog generator</h3>
+<p>Github pages recommends <a href="https://jekyllrb.com/">Jekyll</a> which is ruby based but I will be using <a href="https://docpad.org/">Docpad</a> which is node based.</p>
+<pre><code>npm install -g docpad
+docpad init
+</code></pre><h3 id="step-3-import-a-skin-skeleton-">Step 3: Import a skin (skeleton)</h3>
+<p>We could start making pages and posts and manually styling/linking everything together but an easier way is to use a pre-built bundle which Docpad calls a <a href="https://docpad.org/docs/showcase/#skeletons">skeleton</a>. I will be using <a href="https://github.com/docpad/docpad-skeleton-casper">Casper</a>.</p>
+<pre><code>git clone https://github.com/docpad/docpad-skeleton-casper.git
+</code></pre><p>This will copy the repos contents into a folder named &quot;docpad-skeleton-casper&quot;. Copy the contents of &quot;docpad-skeleton-casper&quot; (excluding the .git folder) into your root working directory (my-blog-generator) and delete the &quot;docpad-skeleton-casper&quot; folder.</p>
+<p>Since our skin uses packages that were not in the initial blog generator we will need to install them.</p>
+<pre><code>npm install
+</code></pre><p>Now we can run our blog using the skin/skeleton </p>
+<pre><code>docpad run --skeleton casper
+</code></pre><p>...and we can see our newly created blog at <a href="http://127.0.0.1:9778">http://127.0.0.1:9778</a>, woohoo!</p>
+<h3 id="step-4-making-some-changes">Step 4: Making some changes</h3>
+<p>The Ghost skeleton bundle is nice but it will  require some changes before we can deploy the blog to production. </p>
+<p><strong>Config:</strong> Your site and author settings are set in <code>./docpad.coffee</code> so you&#39;ll definently want to update this file first.</p>
+<p><strong>Posts:</strong> Several placeholder posts are generated in <code>./src/render/posts</code> which you&#39;ll likely want to remove before deploying. You&#39;ll also want to add some i imagine :) PS: Make sure you name your files with <code>.html.md</code> and not just <code>.md</code></p>
+<p>Note: The docpad run command also starts a file watcher which will regenerate the blogs html so you dont have to keep stopping/starting the generation process.</p>
+<h3 id="step-5-deploying">Step 5: Deploying</h3>
+<p>When you are happy with your blog, stop the run command from your terminal using ctrl+c and push the contents of <code>./out</code> to github (making sure the repos name is my-username.github.io where &quot;my-username&quot; is your actual username).</p>
+]]></description>
+            <link>http://127.0.0.1:9778/posts/create-a-blog-on-github.html</link>
+            <guid isPermaLink="true">http://127.0.0.1:9778/posts/create-a-blog-on-github.html</guid>
+            <pubDate>Sat, 19 May 2018 21:17:05 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
